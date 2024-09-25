@@ -1,6 +1,10 @@
+import bidan from '../../public/assets/images/profile1.jpg'
+// import  gambar3 from "../../public/images/web.jpg"
+
 export const  dataBidan = [
     {
         id : "1",
+        img: bidan, // Use absolute path
         nama : "Bd. Fatik Dian Purwarna STr.Keb",
         bidang : "bidan",
         lama_pengalaman : "2",
@@ -9,6 +13,7 @@ export const  dataBidan = [
     },
     {
         id : "2",
+        img: bidan, // Use absolute path
         nama : "Bd. Fatik Dian Purwarna STr.Keb",
         bidang : "bidan",
         lama_pengalaman : "2",
@@ -17,6 +22,7 @@ export const  dataBidan = [
     },
     {
         id : "3",
+        img : bidan,
         nama : "Bd. Fatik Dian Purwarna STr.Keb",
         bidang : "bidan",
         lama_pengalaman : "2",
@@ -25,6 +31,7 @@ export const  dataBidan = [
     },
     {
         id : "4",
+        img : bidan,
         nama : "Bd. Fatik Dian Purwarna STr.Keb",
         bidang : "bidan",
         lama_pengalaman : "2",
@@ -33,6 +40,7 @@ export const  dataBidan = [
     },
     {
         id : "5",
+        img : bidan,
         nama : "Bd. Fatik Dian Purwarna STr.Keb",
         bidang : "bidan",
         lama_pengalaman : "2",
@@ -41,6 +49,7 @@ export const  dataBidan = [
     },
     {
         id : "6",
+        img : bidan,
         nama : "Bd. Fatik Dian Purwarna STr.Keb",
         bidang : "bidan",
         lama_pengalaman : "2",
@@ -49,6 +58,7 @@ export const  dataBidan = [
     },
     {
         id : "7",
+        img : bidan,
         nama : "Bd. Fatik Dian Purwarna STr.Keb",
         bidang : "bidan",
         lama_pengalaman : "2",
@@ -57,6 +67,7 @@ export const  dataBidan = [
     },
     {
         id : "8",
+        img : bidan,
         nama : "Bd. Fatik Dian Purwarna STr.Keb",
         bidang : "bidan",
         lama_pengalaman : "2",

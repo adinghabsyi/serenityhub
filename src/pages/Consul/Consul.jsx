@@ -13,11 +13,11 @@ function Consul() {
             <div className="flow-root">
               <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
                 <li >
-                  <div className="flex items-center">
+                  <div className="flex ">
                     <div className="flex-shrink-0">
                       <img
-                        className="w-8 h-8 rounded-full"
-                        src="/docs/images/people/profile-picture-1.jpg"
+                        className="w-10 h-10rounded-full"
+                        src={item.img}
                         alt="Neil image"
                       />
                     </div>
