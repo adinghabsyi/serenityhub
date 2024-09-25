@@ -35,7 +35,7 @@ const NavbarMenu = [
 
 const Navbar = () => {
   return (
-    <nav className="container shadow-xl border-b border-gray-200 rounded-3xl">
+    <nav className="  container shadow-xl border-b border-gray-200    rounded-3xl">
       <div className="p-5 flex justify-between items-center">
         {/* Logo Section */}
         <div>

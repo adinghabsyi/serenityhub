@@ -25,7 +25,7 @@ const About = () => {
             <p className="mt-6">
               we tak data-driveb decisions around your wellbeing strategy.
             </p>
-
+            <a href="/tanya-dokter/bidanku">
             <Button
               variant="primary"
               className=" bg-black text-white rounded-[100px] w-[120px] mt-5 hover:cursor-pointer hover:scale-105 hover:shadow-xl"
@@ -33,6 +33,7 @@ const About = () => {
               Get Help{" "}
               <ChevronRightIcon className="h-4 w-4 ml-1 text-orange-500" />
             </Button>
+            </a>
           </div>
         </div>
       </div>
