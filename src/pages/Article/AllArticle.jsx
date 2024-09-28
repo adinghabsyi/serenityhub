@@ -12,8 +12,7 @@ const AllArticle = () => {
             <Link
               to={`/article/${article.id}`}
               key={article.id}
-              className="p-6 rounded-lg shadow-lg m-2 transition-transform transform hover:shadow-2xl"
-              style={{backgroundColor: article.backgroundColor}}
+              className="p-6 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 transition-transform transform hover:shadow-2xl"
             >
               <img
                 src={article.image}

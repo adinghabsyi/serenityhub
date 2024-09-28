@@ -54,9 +54,16 @@ const Article = () => {
                       </div>
                       <Button
                         variant="primary"
-                        className="bg-black text-white rounded-[100px] w-[150px] h-[30px] hover:cursor-pointer hover:scale-105 hover:shadow-xl mt-4 self-start"
+                        className="inline-flex items-center px-4 py-2 text-sm font-medium mr-[120px] bg-black text-white rounded-[100px] w-[150px] h-[30px] hover:cursor-pointer hover:scale-105 hover:shadow-xl"
                       >
-                        Read More <ChevronRightIcon className="h-4 w-4 ml-1" />
+                        <Link
+                          to={`/article/${article.id}`}
+                          key={article.id}
+                          className="flex items-center space-x-1"
+                        >
+                          <span>Read More</span>
+                          <ChevronRightIcon className="h-4 w-4" />
+                        </Link>
                       </Button>
                     </div>
                   </div>
