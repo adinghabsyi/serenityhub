@@ -2,6 +2,7 @@ import React from "react";
 import articles from "./../../db/article.json";
 import Navbar from "@/components/common/Navbar/Navbar";
 import {Link} from "react-router-dom";
+import Footer from "@/components/common/Footer/Footer";
 const AllArticle = () => {
   return (
     <>
@@ -27,6 +28,7 @@ const AllArticle = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 };
