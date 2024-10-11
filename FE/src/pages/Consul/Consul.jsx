@@ -1,5 +1,6 @@
-import React from 'react';
-import { dataBidan } from '@/db/dataBidan';
+import React from "react";
+import { dataBidan } from "@/db/dataBidan";
+import { Link } from "react-router-dom";
 
 function Consul() {
   return (
@@ -11,8 +12,11 @@ function Consul() {
             key={item.nama}
           >
             <div className="flow-root">
-              <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
-                <li >
+              <ul
+                role="list"
+                className="divide-y divide-gray-200 dark:divide-gray-700"
+              >
+                <li>
                   <div className="flex ">
                     <div className="flex-shrink-0">
                       <img
@@ -34,38 +38,40 @@ function Consul() {
                           className="text-black bg-[#f2f2f2] font-medium rounded-lg text-xs px-3 py-1"
                           disabled
                         >
-                         <i class="fa-solid fa-briefcase"></i> {item.lama_pengalaman} tahun 
+                          <i class="fa-solid fa-briefcase"></i>{" "}
+                          {item.lama_pengalaman} tahun
                         </button>
                         <button
                           type="button"
                           className="text-black bg-[#f2f2f2] font-medium rounded-lg text-xs px-3 py-1"
                           disabled
                         >
-                        <i class="fa-solid fa-thumbs-up"></i>  {item.like}
+                          <i class="fa-solid fa-thumbs-up"></i> {item.like}
                         </button>
                       </div>
-                      <div className='flex justify-between items-center'>
+                      <div className="flex justify-between items-center">
                         <div>
-                               <p className="text-sm font-bold text-gray-500 truncate dark:text-gray-400 mt-2">
-                        Rp. {item.harga}
-                      </p>
+                          <p className="text-sm font-bold text-gray-500 truncate dark:text-gray-400 mt-2">
+                            Rp. {item.harga}
+                          </p>
                         </div>
 
                         <div>
-                               <button
-                      type="button"
-                      className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 
+                          <button
+                            type="button"
+                            className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 
                       focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2 dark:bg-red-600 
                       dark:hover:bg-red-700 dark:focus:ring-red-900"
-                    >
-                      Chat
-                    </button>
+                          >
+                            <Link to="form-pasien">
+                              Chat
+                            </Link>
+                            
+                          </button>
                         </div>
                       </div>
-
                     </div>
                   </div>
-               
                 </li>
               </ul>
             </div>
