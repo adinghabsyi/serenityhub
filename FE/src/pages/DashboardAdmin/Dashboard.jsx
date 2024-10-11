@@ -1,18 +1,31 @@
-import { Input } from "@/components/ui/input";
-import { useForm } from "react-hook-form";
-import { useChat } from "./hook/chat";
+import {Input} from "@/components/ui/input";
+import {useForm} from "react-hook-form";
+import {useChat} from "./hook/chat";
+import {Navigate, useNavigate} from "react-router-dom"; // Import Navigate
 
 const Dashboard = () => {
-  const { onSubmit, chats } = useChat();
-  const { register, handleSubmit, reset } = useForm();
-
+  const {onSubmit, chats} = useChat();
+  const {register, handleSubmit, reset} = useForm();
+  const navigate = useNavigate();
   // Log the chats array
   console.log("Chats:", chats);
 
+  // Mengecek apakah pengguna sudah login
+  const isLoggedIn = sessionStorage.getItem("isAdminAuthenticated");
+  // Redirect ke halaman login jika belum login
+  if (!isLoggedIn) {
+    return <Navigate to="/login-admin" replace />;
+  }
+
   const handleFormSubmit = (data) => {
     const email = chats.length > 0 ? chats[0].email : "-"; // Get the email of the user or "-"
-    onSubmit({ ...data, email });
+    onSubmit({...data, email});
     reset(); // Reset the input field
+  };
+
+  const handleLogout = () => {
+    sessionStorage.removeItem("isAdminAuthenticated");
+    navigate("/login-admin");
   };
 
   return (
@@ -21,12 +34,18 @@ const Dashboard = () => {
         <div className="bg-white shadow-lg rounded-lg w-full max-w-2xl p-6">
           <h2 className="text-2xl font-bold mb-6 text-center">
             Chat with{"  "}
-            {chats.length > 0
-              ? chats[0].username // Display the username of the first chat
-              : "Pasien" // Default text when no chats are available
+            {
+              chats.length > 0
+                ? chats[0].username // Display the username of the first chat
+                : "Pasien" // Default text when no chats are available
             }
           </h2>
-
+          <button
+            onClick={handleLogout}
+            className="mb-4 bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-700 transition duration-200"
+          >
+            Logout
+          </button>
           <div className="h-64 border border-gray-300 p-4 rounded-lg overflow-y-scroll mb-4">
             {/* Daftar chat ditampilkan di sini */}
             {chats.length > 0 ? (

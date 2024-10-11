@@ -1,7 +1,7 @@
 import NotFound from "@/pages/not-found";
-import { lazy } from "react";
-import { Navigate, useRoutes } from "react-router-dom";
-
+import {lazy} from "react";
+import {Navigate, useRoutes} from "react-router-dom";
+import LoginAdmin from "@/pages/FormAdmin";
 const HomeClient = lazy(() => import("@/pages/home"));
 const Bidan = lazy(() => import("@/pages/bidanku"));
 const AboutUs = lazy(() => import("@/pages/AboutUs"));
@@ -77,12 +77,19 @@ export default function AppRouter() {
   const AdminPage = [
     {
       path: "/dashboard",
-      element: (
-        <>
-          <NavbarAdmin />
-          <Dashboard />
-        </>
-      ),
+      element:
+        sessionStorage.getItem("isAdminAuthenticated") === "true" ? (
+          <>
+            <NavbarAdmin />
+            <Dashboard />
+          </>
+        ) : (
+          <Navigate to="/login-admin" replace />
+        ),
+    },
+    {
+      path: "/login-admin",
+      element: <LoginAdmin />,
     },
   ];
 
