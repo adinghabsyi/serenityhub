@@ -1,6 +1,6 @@
 import React from "react";
-import {IoMdMenu} from "react-icons/io";
-import {Link} from "react-router-dom"; // Import Link from react-router-dom
+import { IoMdMenu } from "react-icons/io";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import {
   Sheet,
   SheetContent,
@@ -8,7 +8,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import {Button} from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 
 const NavbarMenu = [
   {
@@ -26,16 +26,11 @@ const NavbarMenu = [
     title: "Artikel",
     path: "/all-articles",
   },
-  {
-    id: 4,
-    title: "Testimonial",
-    path: "/testimonial",
-  },
 ];
 
 const Navbar = () => {
   return (
-    <nav className="  container shadow-xl border-b border-gray-200    rounded-3xl">
+    <nav className="container shadow-xl border-b border-gray-200 rounded-3xl">
       <div className="p-5 flex justify-between items-center">
         {/* Logo Section */}
         <div>
@@ -57,12 +52,14 @@ const Navbar = () => {
               </li>
             ))}
             <div className="border-l-2">
-              <Button
-                variant="primary"
-                className="ml-[40px] bg-black text-white rounded-[100px] w-[120px] p-[20px]"
-              >
-                Get Help ?
-              </Button>
+              <Link to="/tanya-dokter/bidanku"> {/* Tambahkan Link di sini */}
+                <Button
+                  variant="primary"
+                  className="ml-[40px] bg-black text-white rounded-[100px] w-[120px] p-[20px]"
+                >
+                  Get Help ?
+                </Button>
+              </Link>
             </div>
           </ul>
         </div>
@@ -90,12 +87,16 @@ const Navbar = () => {
                     </Link>
                   </li>
                 ))}
-                <Button
-                  variant="primary"
-                  className=" bg-black text-white rounded-[100px] w-[120px] p-[20px]"
-                >
-                  Get Help ?
-                </Button>
+                <li>
+                  <Link to="/tanya-dokter/bidanku"> {/* Tambahkan Link di sini */}
+                    <Button
+                      variant="primary"
+                      className="bg-black text-white rounded-[100px] w-[120px] p-[20px]"
+                    >
+                      Get Help ?
+                    </Button>
+                  </Link>
+                </li>
               </ul>
             </SheetContent>
           </Sheet>

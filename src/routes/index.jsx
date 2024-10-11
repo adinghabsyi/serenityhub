@@ -4,10 +4,10 @@ import {Navigate, useRoutes} from "react-router-dom";
 
 const HomeClient = lazy(() => import("@/pages/home"));
 const Bidan = lazy(() => import("@/pages/bidanku"));
-const About = lazy(() => import("@/pages/About/About"));
+const AboutUs = lazy(() => import("@/pages/AboutUs"));
 import AllArticle from "./../pages/Article/AllArticle";
 import DetailArticle from "@/pages/Article/DetailArticle";
-
+ 
 // ----------------------------------------------------------------------
 
 export default function AppRouter() {
@@ -46,7 +46,7 @@ export default function AppRouter() {
     },
     {
       path: "/about",
-      element: <About />,
+      element: <AboutUs />,
       index: true,
     },
     {
