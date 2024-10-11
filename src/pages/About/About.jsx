@@ -1,15 +1,17 @@
 import React from "react";
 import {Button} from "@/components/ui/button";
 import {ChevronRightIcon} from "@radix-ui/react-icons";
+import images from '/assets/images/help.png'
+
 const About = () => {
   return (
     <div className="py-10 container">
       <div className="mx-auto flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 p-6">
           <img
-            src="https://via.placeholder.com/450"
+            src={images}
             alt="Jumbotron Image"
-            className="rounded-lg shadow-lg"
+            // className="rounded-lg shadow-lg"
           />
         </div>
         <div className="md:w-1/2 p-6 mb-[120px] font-bold">
