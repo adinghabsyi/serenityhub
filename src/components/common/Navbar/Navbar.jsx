@@ -1,6 +1,6 @@
 import React from "react";
-import { IoMdMenu } from "react-icons/io";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import {IoMdMenu} from "react-icons/io";
+import {Link} from "react-router-dom"; // Import Link from react-router-dom
 import {
   Sheet,
   SheetContent,
@@ -8,7 +8,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
+import {Button} from "@/components/ui/button";
 
 const NavbarMenu = [
   {
@@ -30,7 +30,7 @@ const NavbarMenu = [
 
 const Navbar = () => {
   return (
-    <nav className="container shadow-xl border-b border-gray-200 rounded-3xl">
+    <nav className="container shadow-xl border-b border-gray-200 rounded-3xl bg-white">
       <div className="p-5 flex justify-between items-center">
         {/* Logo Section */}
         <div>
@@ -52,7 +52,9 @@ const Navbar = () => {
               </li>
             ))}
             <div className="border-l-2">
-              <Link to="/tanya-dokter/bidanku"> {/* Tambahkan Link di sini */}
+              <Link to="/tanya-dokter/bidanku">
+                {" "}
+                {/* Tambahkan Link di sini */}
                 <Button
                   variant="primary"
                   className="ml-[40px] bg-black text-white rounded-[100px] w-[120px] p-[20px]"
@@ -88,7 +90,9 @@ const Navbar = () => {
                   </li>
                 ))}
                 <li>
-                  <Link to="/tanya-dokter/bidanku"> {/* Tambahkan Link di sini */}
+                  <Link to="/tanya-dokter/bidanku">
+                    {" "}
+                    {/* Tambahkan Link di sini */}
                     <Button
                       variant="primary"
                       className="bg-black text-white rounded-[100px] w-[120px] p-[20px]"
