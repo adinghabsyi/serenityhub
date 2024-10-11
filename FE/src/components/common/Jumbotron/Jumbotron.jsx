@@ -1,6 +1,6 @@
 import React from "react";
 import {IoIosArrowRoundDown} from "react-icons/io";
-
+import images from '/assets/images/banner.png'
 const Jumbotron = () => {
   return (
     <div className="container jumbotron mt-6">
@@ -30,9 +30,9 @@ const Jumbotron = () => {
           </div>
           <div className="md:w-1/2 p-6">
             <img
-              src="https://via.placeholder.com/500"
+              src={images}
               alt="Jumbotron Image"
-              className="rounded-lg shadow-lg"
+              // className="rounded-lg shadow-lg"
             />
           </div>
         </div>
