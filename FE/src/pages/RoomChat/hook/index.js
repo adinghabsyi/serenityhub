@@ -4,8 +4,11 @@ import { useState, useEffect } from "react";
 import { z } from "zod";
 import socket from "./socket"; // impor dari file terpisah
 
+import { useNavigate } from "react-router-dom"; // Import untuk navigasi
+
 export const useRoomUser = () => {
   const [messages, setMessages] = useState([]);
+  const navigate = useNavigate(); // Gunakan useNavigate untuk navigasi
 
   const email = sessionStorage.getItem("email-user");
   const username = sessionStorage.getItem("username-user");
@@ -34,12 +37,23 @@ export const useRoomUser = () => {
       });
     };
 
+    const handleChatEnded = () => {
+      // Admin has ended the chat, so navigate back to home
+      sessionStorage.removeItem("email-user");
+      sessionStorage.removeItem("username-user");
+      localStorage.removeItem("messages");
+      window.location.reload();
+      navigate("/"); // Arahkan user kembali ke halaman home
+    };
+
     socket.on("receiveMessage", handleReceiveMessage);
+    socket.on("chatEnded", handleChatEnded); // Listen for chatEnded event
 
     return () => {
       socket.off("receiveMessage", handleReceiveMessage);
+      socket.off("chatEnded", handleChatEnded);
     };
-  }, [email, username]);
+  }, [email, username, navigate]);
 
   const formSchema = z.object({
     message: z.string().min(1, "Message is required"),
@@ -70,4 +84,3 @@ export const useRoomUser = () => {
 
   return { form, onSubmit, messages };
 };
-

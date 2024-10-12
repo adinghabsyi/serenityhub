@@ -14,7 +14,7 @@ function initChat(httpServer) {
   const users = {}; // {email: socketId}
   let adminSocketId = null; // Untuk menyimpan admin socket ID
   let usersInRoom = 0;
-  const MAX_USERS = 1; // Batas maksimal pengguna di room
+  const MAX_USERS = 100; // Batas maksimal pengguna di room
 
   io.on("connection", (socket) => {
     console.log("New client connected, socket ID:", socket.id);
@@ -59,6 +59,28 @@ function initChat(httpServer) {
         io.to(recipientSocketId).emit("receiveMessage", data);
       } else {
         console.log(`Recipient (${data.to}) not found.`);
+      }
+    });
+
+    socket.on("endChat", (data) => {
+      const { email } = data; // Ini sekarang berisi email yang benar
+
+      if (!email) {
+        console.log("Email is undefined or missing");
+        return;
+      }
+
+      const recipientSocketId = users[email]; // Ambil socketId dari user yang sudah terdaftar
+
+      if (recipientSocketId) {
+        io.to(recipientSocketId).emit("chatEnded", {
+          message: "Admin has ended the chat.",
+        });
+        console.log(`Chat ended for user: ${email}`);
+      } else {
+        console.log(
+          `User with email ${email} not found or already disconnected.`
+        );
       }
     });
 

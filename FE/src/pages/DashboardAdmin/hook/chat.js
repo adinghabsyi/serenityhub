@@ -10,7 +10,11 @@ export const useChat = () => {
   });
 
   useEffect(() => {
-    socket.emit("register", { email: "admin", username: "admin", isAdmin: true });
+    socket.emit("register", {
+      email: "admin",
+      username: "admin",
+      isAdmin: true,
+    });
 
     socket.on("receiveMessage", (messageData) => {
       setChats((prevChats) => {
@@ -44,7 +48,7 @@ export const useChat = () => {
                     sender: messageData.sender,
                   },
                 ],
-                closed: false, // default to not closed
+                closed: false, // Default chat open
               },
             ];
 
@@ -89,5 +93,19 @@ export const useChat = () => {
     }
   };
 
-  return { onSubmit, chats };
+  // Fungsi endChat diperbarui untuk menghapus chat dari state, localStorage, dan sessionStorage
+  const endChat = (email) => {
+    setChats((prevChats) => {
+      const updatedChats = prevChats.filter((chat) => chat.email !== email); // Menghapus chat dari state
+
+      // Memanggil socket.emit dengan email user yang ingin diakhiri chatnya
+      socket.emit("endChat", { email }); // Mengirim event endChat dengan email user
+
+      localStorage.setItem("chats", JSON.stringify(updatedChats)); // Memperbarui localStorage
+      localStorage.removeItem("messages"); // Menghapus pesan dari localStorage
+      return updatedChats;
+    });
+  };
+
+  return { onSubmit, chats, endChat };
 };
