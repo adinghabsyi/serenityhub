@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 const RelatedArticles = ({relatedArticles, onArticleClick}) => {
   return (
-    <div className="m-[100px]">
+    <div className="xl:m-[100px] lg:m-[100px]">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-3xl text-gray-800">Artikel Terkait</h2>
         <Link
