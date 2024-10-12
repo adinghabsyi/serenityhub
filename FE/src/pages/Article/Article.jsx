@@ -6,9 +6,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import {Button} from "@/components/ui/button";
-import {ChevronRightIcon} from "@radix-ui/react-icons";
-import {Link} from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { ChevronRightIcon } from "@radix-ui/react-icons";
+import { Link } from "react-router-dom";
 import articles from "./../../db/article.json";
 
 const Article = () => {
@@ -33,11 +33,11 @@ const Article = () => {
               {articles.slice(0, 5).map((article) => (
                 <CarouselItem
                   key={article.id}
-                  className="flex-shrink-0 w-[100px]"
+                  className="flex-shrink-0 w-full sm:w-1/2 md:w-1/4" // 100% di mobile, 50% di tablet, 25% di desktop
                 >
                   <div
                     className="max-w-[290px] h-[250px] mx-auto rounded-lg overflow-hidden mt-6"
-                    style={{backgroundColor: article.backgroundColor}}
+                    style={{ backgroundColor: article.backgroundColor }}
                   >
                     <div className="p-6 flex flex-col justify-between h-full">
                       <div>
