@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Consul() {
   return (
-    <div className="container mx-auto my-20">
+    <div className="container mx-auto my-20 mb-48">
       <div className="grid grid-cols-3 gap-4">
         {dataBidan.map((item) => (
           <div

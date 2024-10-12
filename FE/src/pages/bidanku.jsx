@@ -1,16 +1,16 @@
-import React from 'react'
-import Consul from './Consul/Consul'
-import Navbar from '@/components/common/Navbar/Navbar'
-import Footer from '@/components/common/Footer/Footer'
+import React from "react";
+import Consul from "./Consul/Consul";
+import Navbar from "@/components/common/Navbar/Navbar";
+import Footer from "@/components/common/Footer/Footer";
 
 const bidanku = () => {
   return (
     <div>
-        <Navbar/>
-      <Consul/>
-      <Footer/>
+      <Navbar />
+      <Consul />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default bidanku
+export default bidanku;
