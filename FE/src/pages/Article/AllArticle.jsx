@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import articles from "./../../db/article.json";
 import Navbar from "@/components/common/Navbar/Navbar";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Footer from "@/components/common/Footer/Footer";
+
 const AllArticle = () => {
+  const [cachedImages, setCachedImages] = useState({});
+
+  useEffect(() => {
+    const preloadImages = async () => {
+      const promises = articles.map(async (article) => {
+        const image = new Image();
+        image.src = article.image;
+        image.alt = article.title;
+        await image.decode(); 
+        setCachedImages((prevCachedImages) => ({
+          ...prevCachedImages,
+          [article.id]: image,
+        }));
+      });
+      await Promise.all(promises); 
+    };
+
+    preloadImages();
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -16,7 +37,7 @@ const AllArticle = () => {
               className="p-6 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 transition-transform transform hover:shadow-2xl"
             >
               <img
-                src={article.image}
+                src={cachedImages[article.id] ? cachedImages[article.id].src : article.image}
                 alt={article.title}
                 className="w-full mb-4"
               />
