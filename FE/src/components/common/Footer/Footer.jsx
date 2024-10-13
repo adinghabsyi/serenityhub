@@ -1,10 +1,10 @@
 import React from "react";
-import {FaFacebook, FaTwitter, FaInstagram, FaLinkedin} from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer className="bg-[#232222] text-white py-10">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+      <div className="container mx-auto flex flex-col items-center md:grid md:grid-cols-3 gap-8 text-center md:text-left">
         {/* Logo Section */}
         <div>
           <h2 className="text-2xl font-bold">SerenityHub</h2>
@@ -16,7 +16,7 @@ const Footer = () => {
         {/* Social Media Section */}
         <div>
           <h3 className="text-xl font-semibold">Follow Us</h3>
-          <div className="flex justify-center md:justify-start gap-4 mt-4">
+          <div className="flex justify-center gap-4 mt-4">
             <a href="#" className="hover:text-blue-500">
               <FaFacebook size={24} />
             </a>
@@ -36,7 +36,7 @@ const Footer = () => {
         <div>
           <h3 className="text-xl font-semibold">Subscribe</h3>
           <p className="mt-2">Stay updated with our latest articles.</p>
-          <div className="flex justify-center md:justify-start mt-4">
+          <div className="flex justify-center mt-4">
             <input
               type="email"
               placeholder="Your email address"
