@@ -5,7 +5,7 @@ import images from '/assets/images/help.png'
 
 const About = () => {
   return (
-    <div className="py-10 container">
+    <div className="py-10 container mx-auto">
       <div className="mx-auto flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 p-6">
           <img
@@ -15,10 +15,10 @@ const About = () => {
           />
         </div>
         <div className="md:w-1/2 p-6 mb-[120px] font-bold">
-          <h1 className="font-bold mt-6 text-6xl font-times">
+          <h1 className="font-bold mt-6 text-6xl container mx-auto font-times">
             How <span className="text-brown-200">can we</span> <br /> help you ?{" "}
           </h1>
-          <div className="desc  w-[390px]">
+          <div className="desc  container mx-auto">
             <p className="text-lg mt-6">
               we work with world-class experts to create wellbeing human
               centered tools and courses unite sustainable growth.
